@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Backoffice - DIGITAL BOX TECHNOLOGIES</title>
+<link rel="icon" href="../favicon.ico">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0255B3"><link rel="apple-touch-icon" href="../assets/img/app/admin-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="DBT Backoffice">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="demo" id="demo" hidden>Mode démonstration : données fictives. Une fois le site en ligne, le backoffice enregistre les vraies inscriptions et demandes.</div>
+
+<main class="auth" id="auth" hidden>
+ <div class="auth-c">
+  <img src="../assets/img/logo-dbt-h.svg" alt="DIGITAL BOX TECHNOLOGIES" class="auth-logo">
+  <form id="f-login" hidden>
+   <h1>Backoffice</h1><p class="mu">Connectez-vous pour gérer les comptes pro, les commandes, le catalogue et les commerciaux.</p>
+   <label>Utilisateur<input name="utilisateur" autocomplete="username" required></label>
+   <label>Mot de passe<input name="mdp" type="password" autocomplete="current-password" required></label>
+   <button class="bt bp">Se connecter</button><p class="err" hidden></p>
+   <button type="button" class="lk" id="forgot">Mot de passe oublié ?</button><p class="ok-m" hidden></p>
+  </form>
+  <form id="f-a2f" hidden>
+   <h1>Double authentification</h1><p class="mu">Saisissez le code à 6 chiffres affiché par votre application d'authentification.</p>
+   <label>Code<input name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" required></label>
+   <button class="bt bp">Valider</button><p class="err" hidden></p>
+  </form>
+  <form id="f-reset" hidden>
+   <h1>Nouveau mot de passe</h1>
+   <label>Mot de passe<input name="mdp" type="password" required minlength="10" autocomplete="new-password"><small>10 caractères minimum, lettres et chiffres.</small></label>
+   <label>Confirmer<input name="mdp2" type="password" required autocomplete="new-password"></label>
+   <button class="bt bp">Enregistrer</button><p class="err" hidden></p><p class="ok-m" hidden></p>
+  </form>
+  <form id="f-install" hidden>
+   <h1>Installation du backoffice</h1>
+   <p class="mu">Première connexion : saisissez la clé d'installation, présente dans le fichier <code>CLE-INSTALLATION.txt</code> du dossier <code>dbt-data</code> de votre hébergement (à côté du dossier du site), puis choisissez vos identifiants.</p>
+   <label>Clé d'installation<input name="cle" required autocomplete="off"></label>
+   <label>Nom d'utilisateur<input name="utilisateur" required autocomplete="username"></label>
+   <label>E-mail (pour récupérer le mot de passe)<input name="email" type="email" autocomplete="email"></label>
+   <label>Mot de passe<input name="mdp" type="password" required minlength="10" autocomplete="new-password"><small>10 caractères minimum, lettres et chiffres.</small></label>
+   <label>Confirmer le mot de passe<input name="mdp2" type="password" required autocomplete="new-password"></label>
+   <button class="bt bp">Installer et se connecter</button><p class="err" hidden></p>
+  </form>
+ </div>
+</main>
+
+<div class="app" id="app" hidden>
+ <aside class="side">
+  <a class="side-logo" href="../index.html"><img src="../assets/img/logo-dbt-h.svg" alt="DIGITAL BOX TECHNOLOGIES"></a>
+  <nav class="nav">
+   <button data-v="tableau" class="on">Tableau de bord</button>
+   <button data-v="demandes">Commandes et devis <b class="bdg" id="b-demandes" hidden></b></button>
+   <button data-v="clients">Comptes pro <b class="bdg" id="b-clients" hidden></b></button>
+   <button data-v="produits" data-admin>Catalogue et prix</button>
+   <button data-v="stats">Statistiques</button>
+   <button data-v="avis" data-admin>Avis clients <b class="bdg" id="b-avis" hidden></b></button>
+   <button data-v="commerciaux">Commerciaux</button>
+   <button data-v="utilisateurs" data-admin>Utilisateurs</button>
+   <button data-v="reglages">Réglages</button>
+  </nav>
+  <div class="side-f"><span id="who"></span><button id="app-inst" hidden>Installer l'application</button><a href="../index.html" target="_blank" rel="noopener">Voir le site</a><button id="logout">Se déconnecter</button></div>
+ </aside>
+ <main class="main" id="main"></main>
+</div>
+
+<div class="drawer" id="drawer" hidden><div class="dr-bg" data-close></div><section class="dr" role="dialog" aria-modal="true" aria-labelledby="dr-t"><button class="dr-x" data-close aria-label="Fermer">&times;</button><div id="dr-c"></div></section></div>
+<div class="toast" id="toast" hidden></div>
+<script src="admin.js"></script>
+</body>
+</html>

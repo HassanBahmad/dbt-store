@@ -1,0 +1,80 @@
+{
+ "id": "./",
+ "name": "DIGITAL BOX TECHNOLOGIES",
+ "short_name": "DIGITAL BOX",
+ "lang": "fr",
+ "dir": "ltr",
+ "description": "Matériel informatique professionnel au Maroc : PC, portables, imprimantes, serveurs, stockage et réseau. Prix pro, suivi de commande et contact commercial.",
+ "start_url": "index.html?source=app",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#FFFFFF",
+ "theme_color": "#0255B3",
+ "categories": [
+  "business",
+  "shopping"
+ ],
+ "icons": [
+  {
+   "src": "assets/img/app/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "assets/img/app/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "assets/img/app/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Postes de travail",
+   "url": "postes-de-travail.html?source=app",
+   "icons": [
+    {
+     "src": "assets/img/app/icon-96.png",
+     "sizes": "96x96"
+    }
+   ]
+  },
+  {
+   "name": "Infrastructure",
+   "url": "infrastructure.html?source=app",
+   "icons": [
+    {
+     "src": "assets/img/app/icon-96.png",
+     "sizes": "96x96"
+    }
+   ]
+  },
+  {
+   "name": "Suivi de commande",
+   "url": "suivi-commande.html?source=app",
+   "icons": [
+    {
+     "src": "assets/img/app/icon-96.png",
+     "sizes": "96x96"
+    }
+   ]
+  },
+  {
+   "name": "Panier",
+   "url": "panier.html?source=app",
+   "icons": [
+    {
+     "src": "assets/img/app/icon-96.png",
+     "sizes": "96x96"
+    }
+   ]
+  }
+ ]
+}
